@@ -35,10 +35,10 @@
         <section class="row top_bar">
             <div class="container">
                 <div class="row m0">
-                    <div class="fleft schedule"><strong><i class="fa fa-clock-o"></i> Schedule</strong>: Monday - Saturday - 8:00 - 18:00, Sunday - 8:00 - 14:00</div>
+                    <div class="fleft schedule"><strong><i class="fa fa-clock-o"></i> Ubicación</strong>: Tizimín, Yucatán.</div>
                     <div class="fright contact_info">
-                        <div class="fleft email"><img src="images/icons/envelope.jpg" alt=""> info@yourthemename.com</div>
-                        <div class="fleft phone"><i class="fa fa-phone"></i> <strong>123 7890 456</strong></div>
+                        <div class="fleft email"><i class="fa fa-envelope"></i> info@correo.com</div>
+                        <div class="fleft phone"><i class="fa fa-phone"></i> <strong>000 000 0000</strong></div>
                     </div>
                 </div>
             </div>
@@ -48,59 +48,26 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html"><img src="images/logo/3.png" alt=""></a>
+                    <a class="navbar-brand" href="index.html"><img src=" {{ asset('assets/images/logo/3.png') }}" alt=""></a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">book appointment</a>
+                    <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Contactar</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->            
                 <div class="collapse navbar-collapse" id="main_nav">                
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Home</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="index.html">Homepage version 1</a></li>
-                                <li><a href="index2.html">Homepage version 2</a></li>
-                                <li><a href="index3.html">Homepage version 3</a></li>
-                            </ul>
+                        <li class="active">
+                            <a href="#"  >Inicio</a>                            
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">services</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="services.html">services</a></li>
-                                <li><a href="single-service.html">single service</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">doctors</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="doctors.html">doctors</a></li>
-                                <li><a href="doctor-details.html">doctor details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="time-table.html">Time Table</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="about.html">about</a></li>
-                                <li><a href="shortcode.html">shortcode</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">blog</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="blog.html">Blog version 1</a></li>
-                                <li><a href="blog2.html">Blog version 2</a></li>
-                                <li><a href="single-post.html">Single Post</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">contact</a></li>
-                        <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">book appointment</a></li>
+                        <li><a href="time-table.html"><i class="fa fa-shopping-cart"></i> Productos</a></li>                        
+                        <li><a href="time-table.html">Servicios</a></li>
+                        
+                        <li><a href="contact.html">contacto</a></li>
+                        <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Comprar Cosecha</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
@@ -124,18 +91,12 @@
                                 <li><a href="#">pages</a></li>
                             </ul>
                             <ul class="secondOrderList nav">                                
-                                <li><a href="#">blog</a></li>
-                                <li><a href="#">contact</a></li>
-                                <li><a href="#">shop</a></li>
-                                <li><a href="#">faq</a></li>
-                                <li><a href="#">shortcodes</a></li>
-                            </ul>
-                            <ul class="thirdOrderList nav">
                                 <li><a href="#">terms &amp; condition</a></li>
                                 <li><a href="#">privacy policy</a></li>
                                 <li><a href="#">legal desclaimer</a></li>
                                 <li><a href="#">sitemap</a></li>
                             </ul>
+                          
                         </div>
                     </div>
                     <div class="col-sm-4 col-md-6 col-lg-3 footer_address">
@@ -156,18 +117,9 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-4 newsletter">
-                        <div class="heading row m0">
-                            <h3>SIGNUP NEWSLETTER</h3>
-                        </div>
-                        <form action="#" class="row m0 newsletterForm">
-                            <input type="text" class="form-control" placeholder="Your Name">
-                            <input type="email" class="form-control" placeholder="Enter your Email Address">
-                            <input type="submit" class="form-control" value="submit">
-                        </form>
-                    </div>
-                </div>
-                <div class="row m0 footer_bottom">
-                    <ul class="list-inline social_menu m0 fleft">
+                       <div class="heading row m0"></div>
+                         <div class="row m0 footer_bottom">
+                    <ul class="list-inline social_menu fleft">
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -177,6 +129,9 @@
                     </ul>
                     <div class="fright copyright">&copy; <a href="index.html">medicalpro 2015</a>. Made with love for great people.</div>
                 </div>
+                    </div>
+                </div>
+               
             </div>
         </footer>
         <div class="modal fade" id="appointmefnt_form_pop" tabindex="-1" role="dialog" aria-labelledby="appointmefnt_form_pop">

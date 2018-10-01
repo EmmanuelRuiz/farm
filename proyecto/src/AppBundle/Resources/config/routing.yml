@@ -8,4 +8,4 @@ app_product:
 
 app_homepage:
     path: /
-    defaults: { _controller: AppBundle:User:login }
+    defaults: { _controller: AppBundle:Product:index }
