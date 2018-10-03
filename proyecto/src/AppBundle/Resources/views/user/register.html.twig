@@ -1,5 +1,10 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/validar-email.js') }}"></script>
+{% endblock %}
+
 {% block content %}
     
     <section class="row about_medicalpro_row">

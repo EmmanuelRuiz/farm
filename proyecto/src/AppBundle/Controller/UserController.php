@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 use BackendBundle\Entity\User;
@@ -88,5 +89,25 @@ class UserController extends Controller {
         return $this->render('AppBundle:User:register.html.twig', array(
             "form" => $form->createView()
         ));
+    }
+    
+    
+    public function emailTestAction(Request $request){
+        //recojemos en la variable lo que nos llega por post
+        //para usar la respuesta http hay que incluirla en el namespace
+        $email = $request->get("email");
+        
+        $em = $this->getDoctrine()->getManager();
+        $user_repo = $em->getRepository("BackendBundle:User");
+        $user_isset = $user_repo->findOneBy(array("email"=>$email));
+        
+        $result = "used";
+        if(count($user_isset) >= 1 && is_object($user_isset)){
+            $result = "used";
+        } else {
+            $result = "unused";
+        }
+        
+        return new Response ($result);
     }
 }
