@@ -5,10 +5,19 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 use BackendBundle\Entity\User;
 use AppBundle\Form\UserType;
 
 class UserController extends Controller {
+    //las sessiones las uso para los mensajes flash
+    //para eso arriba usamos el componente session
+    //en register action hay un ejemplo
+    private $session;
+    public function __construct() {
+        $this->session = new Session();
+    }
 
     public function loginAction(Request $request) {
         
@@ -60,6 +69,7 @@ class UserController extends Controller {
                     $flush = $em->flush();
                     if($flush == null){
                         $status = "Te has registrado correctamente.";
+                        $this->session->getFlashBag()->add("status", $status);
                         return $this->redirect("login");
                     } else {
                         $status = "Hubo un error, intenta de nuevo.";
@@ -71,7 +81,7 @@ class UserController extends Controller {
             } else {
                 $status = "No te has registrado correctamente. Prueba de nuevo";
             }
-           
+            $this->session->getFlashBag()->add("status", $status);
         }
         
         
