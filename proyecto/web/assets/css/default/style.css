@@ -1388,7 +1388,7 @@ button:hover {
 }
 /*----------------------------------------------------------------*/
 .about_medicalpro_row {
-  background: url(../../images/pages/about/about.png) repeat scroll 0 0 #0889d6;
+  background: url(../../images/pages/about/about.png) repeat scroll 0 0 #77b81e;
   padding: 80px 0 125px;
 }
 .about_medicalpro_row .titleRow {
@@ -3025,3 +3025,25 @@ footer .footer_bottom .copyright a {
 }
 .service_tab .tab-content .tab-pane .view_all{}
 /*Service Tab End*/
+
+
+/*Estilos Propios*/
+
+.formulario-registro{
+    padding: 20px;
+    margin: 0px auto;
+    float: none;
+}
+
+.formulario-registro input{
+    margin-bottom: 10px;
+}
+
+.formulario-registro label{
+    color: white !important
+}
+
+.btn-azul{
+    background-color: #1444CC;
+    color: #fff;
+}

@@ -52,6 +52,28 @@ class User
      */
     private $updatedAt;
 
+    
+    //metodo para indicar que campo de la bd va a actuar como username
+    //esto es para el formulario del login
+    public function getUsername(){
+        return $this->email;
+    }
+    
+    public function getSalt(){
+        return null;
+    }
+    
+    public function getRoles(){
+        return $this->getRole();
+    }
+    
+    public function eraseCredentials(){
+        
+    }
+    
+    public function __toString() {
+        return $this->name;
+    }
 
     /**
      * Get id
