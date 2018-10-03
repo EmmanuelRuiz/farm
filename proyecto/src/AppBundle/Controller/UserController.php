@@ -21,9 +21,24 @@ class UserController extends Controller {
     }
 
     public function loginAction(Request $request) {
+        //en security yml configuramos el provider, 
+        //en donde indicamos que entidad funcionara como provider
+        //en firewalls menu indicamos las rutas
+        
+        //en backendbundle/entity/user.php se configura userinterface
+        
+        
+        //cargar servicio de autenticacion de symfony
+        $authenticationUtils = $this->get('security.authentication_utils');
+        
+        //guardar si hubo un error
+        $error = $authenticationUtils->getLastAuthenticationError();
+        //saccar el ultimo usuario que intento loggearse y no pudo
+        $lastUsername = $authenticationUtils->getLastUsername();
         
         return $this->render('AppBundle:User:login.html.twig', array(
-            "titulo" => "Login"
+            'last_username' => $lastUsername,
+            'error' => $error
         ));
     }
     
