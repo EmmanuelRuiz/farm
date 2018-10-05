@@ -1,13 +1,14 @@
 <?php
 
 namespace BackendBundle\Entity;
+
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
  */
-class User implements UserInterface
-{
+class User implements UserInterface {
+
     /**
      * @var integer
      */
@@ -53,25 +54,24 @@ class User implements UserInterface
      */
     private $updatedAt;
 
-    
     //metodo para indicar que campo de la bd va a actuar como username
     //esto es para el formulario del login
-    public function getUsername(){
+    public function getUsername() {
         return $this->email;
     }
-    
-    public function getSalt(){
+
+    public function getSalt() {
         return null;
     }
-    
-    public function getRoles(){
+
+    public function getRoles() {
         return array('ROLE_USER', 'ROLE_ADMIN');
     }
-    
-    public function eraseCredentials(){
+
+    public function eraseCredentials() {
         
     }
-    
+
     public function __toString() {
         return $this->name;
     }
@@ -81,8 +81,7 @@ class User implements UserInterface
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -93,8 +92,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setRole($role)
-    {
+    public function setRole($role) {
         $this->role = $role;
 
         return $this;
@@ -105,8 +103,7 @@ class User implements UserInterface
      *
      * @return string
      */
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -117,8 +114,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -129,8 +125,7 @@ class User implements UserInterface
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -141,8 +136,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setLastname($lastname)
-    {
+    public function setLastname($lastname) {
         $this->lastname = $lastname;
 
         return $this;
@@ -153,8 +147,7 @@ class User implements UserInterface
      *
      * @return string
      */
-    public function getLastname()
-    {
+    public function getLastname() {
         return $this->lastname;
     }
 
@@ -165,8 +158,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -177,8 +169,7 @@ class User implements UserInterface
      *
      * @return string
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -189,8 +180,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setPassword($password)
-    {
+    public function setPassword($password) {
         $this->password = $password;
 
         return $this;
@@ -201,8 +191,7 @@ class User implements UserInterface
      *
      * @return string
      */
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
 
@@ -213,8 +202,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setImage($image)
-    {
+    public function setImage($image) {
         $this->image = $image;
 
         return $this;
@@ -225,8 +213,7 @@ class User implements UserInterface
      *
      * @return string
      */
-    public function getImage()
-    {
+    public function getImage() {
         return $this->image;
     }
 
@@ -237,8 +224,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setCreatedAt($createdAt)
-    {
+    public function setCreatedAt($createdAt) {
         $this->createdAt = $createdAt;
 
         return $this;
@@ -249,8 +235,7 @@ class User implements UserInterface
      *
      * @return \DateTime
      */
-    public function getCreatedAt()
-    {
+    public function getCreatedAt() {
         return $this->createdAt;
     }
 
@@ -261,8 +246,7 @@ class User implements UserInterface
      *
      * @return User
      */
-    public function setUpdatedAt($updatedAt)
-    {
+    public function setUpdatedAt($updatedAt) {
         $this->updatedAt = $updatedAt;
 
         return $this;
@@ -273,9 +257,8 @@ class User implements UserInterface
      *
      * @return \DateTime
      */
-    public function getUpdatedAt()
-    {
+    public function getUpdatedAt() {
         return $this->updatedAt;
     }
-}
 
+}

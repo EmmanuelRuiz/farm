@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    
+
     <section class="row about_medicalpro_row">
         <div class="container">
             <div class="row titleRow">
@@ -14,16 +14,16 @@
                 <h2>Crear cuenta</h2>
             </div>
             <div class="row">
-        <div class="container">
-            <div class="formulario-registro col-lg-4">
-                <div>
-                    {{form_start(form, {'action':'', 'method':'POST'})}}
-                    {{form_errors(form)}}
-                    {{form_end(form)}}
+                <div class="container">
+                    <div class="formulario-registro col-lg-4">
+                        <div>
+                            {{form_start(form, {'action':'', 'method':'POST'})}}
+                            {{form_errors(form)}}
+                            {{form_end(form)}}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
         </div>
     </section>
 {% endblock %}
