@@ -1,5 +1,24 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
 
 {% block content %}
-    edit user
+    <section class="row about_medicalpro_row">
+        <div class="container">
+            <div class="row titleRow">
+                <h5>Modificar información de la cuenta</h5>
+                <h2>Mis Datos</h2>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="formulario-registro col-lg-4">
+                        <div>
+                            <!-- el enctype indica que mandamos archivos -->
+                            {{form_start(form, {'enctype':'multipart form/data'})}}
+                            {{form_errors(form)}}
+                            {{form_end(form)}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -7,8 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
+
 use BackendBundle\Entity\User;
 use AppBundle\Form\UserType;
+use AppBundle\Form\EditUserType;
 
 class UserController extends Controller {
 
@@ -136,8 +138,15 @@ class UserController extends Controller {
     }
     
     public function editUserAction(Request $request){
+        //cargar en user todos los datos del usuario logueado
+        $user = $this->getUser();
+        //pasar los datos del usuario logueado al formulario
+        $form = $this->createForm(EditUserType::class, $user);
+     
         
-        return $this->render('AppBundle:User:edit_user.html.twig');
+        return $this->render('AppBundle:User:edit_user.html.twig', array(
+            "form" => $form->createView()
+        ));
     }
 
 }
