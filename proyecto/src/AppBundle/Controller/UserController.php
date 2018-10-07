@@ -22,6 +22,12 @@ class UserController extends Controller {
     }
 
     public function loginAction(Request $request) {
+        //si el if nos devuelve un objeto que redirija a home
+        // pues el usuario esta logueado
+        if(is_object($this->getUser())){
+            return $this->redirect('home');
+        }
+        
         //en security yml configuramos el provider, 
         //en donde indicamos que entidad funcionara como provider
         //en firewalls menu indicamos las rutas
@@ -41,6 +47,13 @@ class UserController extends Controller {
     }
 
     public function registerAction(Request $request) {
+        //si el if nos devuelve un objeto que redirija a home
+        // pues el usuario esta logueado        
+        if(is_object($this->getUser())){
+            return $this->redirect('home');
+        }
+        
+        
         //Usamos el objeto user y el formulario, hay que incluirlos en el namespace
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -120,6 +133,11 @@ class UserController extends Controller {
         }
 
         return new Response($result);
+    }
+    
+    public function editUserAction(Request $request){
+        
+        return $this->render('AppBundle:User:edit_user.html.twig');
     }
 
 }

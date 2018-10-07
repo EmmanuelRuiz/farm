@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %} Aguada {% endblock %}
+        </title>
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('assets/favicon/android-icon-192x192.png') }}">
+
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/favicon/favicon-96x96.png') }}">
+
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        {% block fonts %}
+            <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto+Slab:400,700') }}" rel="stylesheet">
+        {% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('assets/css/bootstrap-theme.min.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('assets/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('assets/vendors/owl.carousel/css/owl.carousel.min.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('assets/vendors/owl.carousel/css/owl.theme.default.min.css') }}" type="text/css" rel="stylesheet">
+            <link href="{{ asset('assets/vendors/flexslider/flexslider.css') }}" type="text/css" media="screen" rel="stylesheet">
+            <link href="{{ asset('assets/vendors/bootstrap-datepicker/css/datepicker3.css') }}" type="text/css" media="screen" rel="stylesheet">
+            <link href="{{ asset('assets/vendors/rs-plugin/css/settings.css') }}" type="text/css" media="screen" rel="stylesheet">
+            <link href="{{ asset('assets/css/default/style.css') }}" type="text/css" media="screen" rel="stylesheet">
+            <link href="{{ asset('assets/css/responsive/responsive.css') }}" type="text/css" media="screen" rel="stylesheet">
+
+        {% endblock %}
+
+
+
+    </head>
+    <body class="default home2">
+ 
+        {% if app.user != null %}
+            <ul>
+                <li>{{ app.user.name }}</li>
+                <li> Mis datos </li>
+                <li><a href="{{path("logout")}}" >salir</a></li>
+                <li></li>
+                
+            </ul>
+            
+        {% endif %}    
+        {% block content %}
+
+        {% endblock %}
+
+      
+        {% block javascripts %}
+            <script type="text/javascript">
+                var URL = "{{ app.request.getSchemeAndHttpHost() }}/farm/proyecto/web/app_dev.php";
+            </script>
+            <script src="{{ asset('assets/js/jquery-2.1.3.min.js') }}"></script>
+            <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/vendors/owl.carousel/js/owl.carousel.min.js') }}"></script>
+            <script src="{{ asset('assets/vendors/counterup/jquery.counterup.min.js') }}"></script>
+            <script src="{{ asset('assets/vendors/waypoints/waypoints.min.js') }}"></script>
+            <script src="{{ asset('assets/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+            <script src="{{ asset('assets/vendors/flexslider/jquery.flexslider-min.js') }}"></script>
+            <script src="{{ asset('assets/vendors/rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
+            <script src="{{ asset('assets/vendors/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+            <script src="{{ asset('assets/js/theme.js') }}"></script>
+            <script src="{{ asset('assets/js/revs.js') }}"></script>
+
+        {% endblock %}
+    </body>
+
+</html>

@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends Controller
 {
      public function indexAction(Request $request){
-         echo "Accion index product";
-         die();
+         
+         return $this->render('AppBundle:Product:home.html.twig');
      }
 }
