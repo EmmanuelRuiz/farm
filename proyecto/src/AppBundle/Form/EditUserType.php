@@ -47,14 +47,7 @@ class EditUserType extends AbstractType {
                     'attr' => array(
                         'class' => 'form-image form-control'
                     )
-                ))
-                ->add('password', PasswordType::class, array(
-                    'label' => 'Contraseña',
-                    'required' => 'required',
-                    'attr' => array(
-                        'class' => 'form-password form-control'
-                    )
-                ))
+                ))               
                 ->add('Guardar', SubmitType::class, array(
                     "attr" => array(
                         "class" => "form-submit btn btn-azul  btn-block"
