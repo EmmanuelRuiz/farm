@@ -37,6 +37,13 @@
  
         {% if app.user != null %}
             <ul>
+                <div class="avatar">
+                    {% if app.user.image == null %}
+                        <img src="{{ asset('assets/images/default.png')}} ">
+                    {% else %}
+                        <img src="{{ asset('uploads/users/'~app.user.image)}} ">
+                    {% endif %}
+                </div>
                 <li>{{ app.user.name }}</li>
                 <li> Mis datos </li>
                 <li><a href="{{path("logout")}}" >salir</a></li>

@@ -3047,3 +3047,20 @@ footer .footer_bottom .copyright a {
     background-color: #1444CC;
     color: #fff;
 }
+
+/*header*/
+
+.avatar{
+    background: white;
+    border-radius: 500px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    float: left;
+    margin-right: 12px;
+    margin-top: -7px;
+}
+
+.avatar img{
+    height: 100%;
+}
