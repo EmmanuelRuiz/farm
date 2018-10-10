@@ -1,8 +1,3 @@
-/*
- *  
- * 
- */
-
 $(document).ready(function () {
     $(".form-email").blur(function () {
         var email_form = this.value;
