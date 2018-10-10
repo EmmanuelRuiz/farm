@@ -1,0 +1,11 @@
+BackendBundle\Entity\User:
+    properties:
+        name:
+            - NotBlank: {message: "Debes ingresar tu nombre"}
+        lastname:
+            - NotBlank: {message: "Debes ingresar tu apellido"}
+        email:
+            - NotBlank: {message: "Debes agregar un correo"}
+            - Email:
+                message: El email {{ value }} no es valido
+                checkMX: true
