@@ -179,15 +179,14 @@ class UserController extends Controller {
                     } else {
                         $user->setImage($user_image);
                     }
-         
+
                     //persistir objeto user en doctrine
                     $em->persist($user);
                     //guardar en bd
                     $flush = $em->flush();
-                    
+
                     if ($flush == null) {
                         $status = "Los datos se guardaron con éxito.";
-                        
                     } else {
                         $status = "Hubo un error, intenta de nuevo.";
                     }
@@ -205,10 +204,21 @@ class UserController extends Controller {
                     "form" => $form->createView()
         ));
     }
-    
-    public function usersAction(Request $request){
-        var_dump("users action");
-        die();
-    }
+
+    /*public function usersAction(Request $request) {
+        //para trabajar con la bd hacemos una instancia del entitimanager
+        $em = $this->getDoctrine()->getManager();
+        $dql = "SELECT u FROM BackendBundle:User u";
+        $query = $em->createQuery($dql);
+        //ahora usamos el paginador para obtener los registros y poder paginar
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+                $query, $request->query->getInt('page', 1, 5)
+        );
+
+        return $this->render('AppBundle:Administrator:users.html.twig', array(
+            'pagination' => $pagination
+        ));
+    }*/
 
 }

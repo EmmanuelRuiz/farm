@@ -21,6 +21,3 @@ user_edit:
     path: /my-data
     defaults: { _controller: AppBundle:User:editUser }
 
-user_list:
-    path: /people
-    defaults: { _controller: AppBundle:User:users }

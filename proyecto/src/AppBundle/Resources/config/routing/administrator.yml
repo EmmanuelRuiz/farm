@@ -1,0 +1,3 @@
+user_list:
+    path: /admin/users
+    defaults: { _controller: AppBundle:Administrator:users }

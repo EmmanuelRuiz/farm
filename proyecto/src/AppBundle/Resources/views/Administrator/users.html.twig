@@ -1,0 +1,23 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Administradores registrados</h1>
+        Total de personas: {{ pagination.getTotalItemCount }}
+        <hr>
+        
+        <div>
+            {% for user in pagination %}
+                {{user.email}} <br>
+            {% endfor %} 
+
+        </div>
+            
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        <h1>din</h1>
+    </div>
+{% endblock %}
+

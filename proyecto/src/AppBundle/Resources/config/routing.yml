@@ -6,6 +6,10 @@ app_product:
     resource: "@AppBundle/Resources/config/routing/product.yml"
     prefix: /
 
+app_admin:
+    resource: "@AppBundle/Resources/config/routing/administrator.yml"
+    prefix: /
+
 app_homepage:
     path: /
     defaults: { _controller: AppBundle:Product:index }
