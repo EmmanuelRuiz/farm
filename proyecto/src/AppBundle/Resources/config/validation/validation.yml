@@ -8,4 +8,4 @@ BackendBundle\Entity\User:
             - NotBlank: {message: "Debes agregar un correo"}
             - Email:
                 message: El email {{ value }} no es valido
-                checkMX: true
+                checkMX: false

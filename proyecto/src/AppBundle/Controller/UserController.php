@@ -163,7 +163,7 @@ class UserController extends Controller {
                 //obtener el resultado de la query
                 $user_isset = $query->getResult();
                 //si user isset = 0 que deje editar el usuario 
-                if (($user->getEmail() == $user_isset[0]->getEmail()) || count($user_isset) == 0) {
+                if ( count($user_isset) == 0 || ($user->getEmail() == $user_isset[0]->getEmail()) ) {
                     //si el resultado es 0, modificamos el usuario
                     //subir archivo
 
