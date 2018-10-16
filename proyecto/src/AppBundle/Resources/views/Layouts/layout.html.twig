@@ -62,10 +62,17 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->            
                 <div class="collapse navbar-collapse" id="main_nav">                
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a href="#"  >Inicio</a>                            
+                        <li>
+                            <form action="{{ path('product_search') }}" class="navbar-form navbar-left">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Buscar producto" name="search">
+                                </div>
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button
+                            </form>
                         </li>
-                      
+
                         <li><a href="time-table.html"><i class="fa fa-shopping-cart"></i> Productos</a></li>                        
                         <li><a href="time-table.html">Servicios</a></li>
 

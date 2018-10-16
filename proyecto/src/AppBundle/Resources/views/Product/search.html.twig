@@ -1,0 +1,21 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        <h1>LISTA</h1>
+        Resultados encontrados: {{ pagination.getTotalItemCount }}
+        <hr>
+        
+        <div>
+            {% for product in pagination %}
+                {{product.productName}} <br>
+            {% endfor %} 
+
+        </div>
+            
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+{% endblock %}
