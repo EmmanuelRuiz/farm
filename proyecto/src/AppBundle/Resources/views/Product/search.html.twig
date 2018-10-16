@@ -1,14 +1,21 @@
 {% extends "AppBundle:Layouts:layout.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/products-pagination.js') }}"></script>
+{% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container ">
         <h1>LISTA</h1>
         Resultados encontrados: {{ pagination.getTotalItemCount }}
         <hr>
         
-        <div>
+        <div class=" box-products">
             {% for product in pagination %}
+                <div class="product-item">
                 {{product.productName}} <br>
+                </div>
+                <hr>
             {% endfor %} 
 
         </div>
