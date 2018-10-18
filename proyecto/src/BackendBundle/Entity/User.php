@@ -67,7 +67,11 @@ class User implements UserInterface, \Serializable {
     public function getRoles() {
         return array('ROLE_USER', 'ROLE_ADMIN');
     }
-
+    /*
+    public function getPassword() {
+        return $this->password;
+    }
+*/
     public function eraseCredentials() {
         
     }
@@ -89,7 +93,7 @@ class User implements UserInterface, \Serializable {
                 $this->id,
                 $this->email,
                 $this->password
-                ) = unserialize($serialized);
+                ) = unserialize($serialized, array('allowed_classes' => false));
     }
 
     /**
