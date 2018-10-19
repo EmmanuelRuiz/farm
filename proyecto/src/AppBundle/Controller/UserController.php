@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\Session\Session;
 use BackendBundle\Entity\User;
 use AppBundle\Form\UserType;
 use AppBundle\Form\EditUserType;
@@ -23,7 +23,7 @@ class UserController extends Controller {
         $this->session = new Session();
     }
 
-    public function loginAction(Request $request) {
+    public function loginAction(Request $request, AuthenticationUtils $authenticationUtils) {
         //si el if nos devuelve un objeto que redirija a home
         // pues el usuario esta logueado
         if (is_object($this->getUser())) {
