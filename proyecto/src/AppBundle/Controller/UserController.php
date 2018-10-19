@@ -27,7 +27,7 @@ class UserController extends Controller {
         //si el if nos devuelve un objeto que redirija a home
         // pues el usuario esta logueado
         if (is_object($this->getUser())) {
-            return $this->redirect('home');
+            return $this->redirect('/admin/');
         }
 
         //en security yml configuramos el provider, 
@@ -35,13 +35,12 @@ class UserController extends Controller {
         //en firewalls menu indicamos las rutas
         //en backendbundle/entity/user.php se configura userinterface
         //cargar servicio de autenticacion de symfony
-        $authenticationUtils = $this->get('security.authentication_utils');
+        //$authenticationUtils = $this->get('security.authentication_utils');
 
         //guardar si hubo un error
         $error = $authenticationUtils->getLastAuthenticationError();
         //saccar el ultimo usuario que intento loggearse y no pudo
         $lastUsername = $authenticationUtils->getLastUsername();
-
         return $this->render('AppBundle:User:login.html.twig', array(
                     'last_username' => $lastUsername,
                     'error' => $error
@@ -52,7 +51,7 @@ class UserController extends Controller {
         //si el if nos devuelve un objeto que redirija a home
         // pues el usuario esta logueado        
         if (is_object($this->getUser())) {
-            return $this->redirect('home');
+            return $this->redirect('/admin/');
         }
 
 
